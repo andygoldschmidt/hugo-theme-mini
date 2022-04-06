@@ -28,6 +28,10 @@
     {{ template "_internal/google_analytics_async.html" . }}
 {{ end }}
 
+{{ if .Site.Params.plausible.enable }}
+    {{ partial "plausible_head.html" . }}
+{{ end }}
+
 {{ if or .Params.math .Site.Params.math }}
   {{ partial "math.html" . }}
 {{ end }}
